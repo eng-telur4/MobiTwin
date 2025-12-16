@@ -3,6 +3,13 @@ This repository mainly contains source code for my undergraduate graduation rese
 
 ## ディレクトリ構成
 
+- experiment_data
+  - The obtained data of experiments of E2E latency and packet loss rate.
+- ubuntu_pc/src
+  - The executable ros original program in UbuntuPC.
+- unity
+  - The project files of point cloud visualization with Unity.
+
 ## やったこと
 
 - システム上、PCとTurtlebot4の両方の環境構築が必要
