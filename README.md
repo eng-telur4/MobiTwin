@@ -61,8 +61,13 @@ python3 db3_to_bin.py <フォルダ名>_0.db3 <フォルダ名>_0.bin
 - Unityのヒエラルキービューで[System]を選択し、SimgleFilePointCloudPlayerにチェックを入れ他は外す
 - SimgleFilePointCloudPlayerでbinファイルを指定して、スタートボタンで実行する
 
+## ラズパイのシャットダウン
 
-## やったこと
+```bash
+sudo sync; sudo shutdown -h now
+```
+
+## 開発環境構築でやったこと
 
 - システム上、PCとTurtlebot4の両方の環境構築が必要
 ｚ
