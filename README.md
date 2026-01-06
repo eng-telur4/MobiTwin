@@ -23,15 +23,15 @@ This repository mainly contains source code for my undergraduate graduation rese
 ros2 launch livox_ros_driver2 msg_MID360_launch.py
 ```
 
-- UbuntuPCで3つターミナルを起動し、それぞれ以下のコマンドを実行する
+- UbuntuPCで3つターミナルを起動し、それぞれ以下のコマンドを実行する（データ変換、可視化、送信）
 
 ```bash
-# ターミナル（1つ目）：livox_to_pointcloudの起動
+# ターミナル（1つ目）：livox_to_pointcloudの起動（データ変換）
 ros2 run livox_to_pointcloud2 livox_to_pointcloud2_node  --ros-args -r /livox_pointcloud:=/livox/lidar
 ```
 
 ```bash
-# ターミナル（2つ目）：rvizの起動・点群の可視化（rvizファイル：Fixed Frameをlivox_frame、topic受信をPointCloud2にしたもの）
+# ターミナル（2つ目）：rvizの起動・データの可視化（rvizファイル：Fixed Frameをlivox_frame、topic受信をPointCloud2にしたもの）
 rviz2 -d livox_ws/l2pc.rviz
 ```
 
