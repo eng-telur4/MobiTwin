@@ -47,7 +47,7 @@ ros2 run pc_send pc_send
 - ラズパイからのデータ受信時・/converted_pointcloud2への変換時にUbuntuPCで以下のコマンドを実行
 
 ```bash
-ros2 bag record <フォルダ名> -s sqlite3 /converted_pointcloud2
+ros2 bag record -o <フォルダ名> -s sqlite3 /converted_pointcloud2
 ```
 
 ## やったこと
