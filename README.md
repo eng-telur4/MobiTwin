@@ -1,4 +1,4 @@
-# MobiTwin
+<img width="2420" height="1386" alt="image" src="https://github.com/user-attachments/assets/a8383d2f-e1aa-4715-824b-a5767227df9f" /># MobiTwin
 This repository mainly contains source code for my undergraduate graduation research projects.
 
 ## ディレクトリ構成
@@ -9,6 +9,29 @@ This repository mainly contains source code for my undergraduate graduation rese
   - The executable ros original program in UbuntuPC.
 - unity
   - The project files of point cloud visualization with Unity.
+ 
+### 実行手順
+
+- ラズパイにSSH接続し、以下のコマンドを実行する。Wi-Fi経由でデータが送信し始めるようになる
+
+```bash
+ros2 launch livox_ros_driver2 msg_MID360_launch.py
+```
+
+- UbuntuPCで3つターミナルを起動し、それぞれ以下のコマンドを実行する
+
+```bash
+# ターミナル（1つ目）：livox_to_pointcloudの起動
+ros2 run livox_to_pointcloud2 livox_to_pointcloud2_node  --ros-args -r /livox_pointcloud:=/livox/lidar
+
+# ターミナル（2つ目）：rvizの起動（rvizファイル：Fixed Frameをlivox_frame、topic受信をPointCloud2にしたもの）
+rviz2 -d livox_ws/l2pc.rviz
+
+# ターミナル（3つ目）：WindowsPCへのデータ送信
+ros2 run pc_send pc_send
+```
+
+- WindowsPCでUnityを起動し、SceneをSampleSceneにしたあと、画面上部のスタートボタンを押すと点群が表示される
 
 ## やったこと
 
