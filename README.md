@@ -42,10 +42,18 @@ ros2 run pc_send pc_send
 
 - WindowsPCでUnityを起動し、SceneをSampleSceneにしたあと、画面上部のスタートボタンを押すと点群が表示される
 
+## データ記録方法
+
+- ラズパイからのデータ受信時・/converted_pointcloud2への変換時にUbuntuPCで以下のコマンドを実行
+
+```bash
+ros2 bag record <フォルダ名> -s sqlite3 /converted_pointcloud2
+```
+
 ## やったこと
 
 - システム上、PCとTurtlebot4の両方の環境構築が必要
-
+ｚ
 ### PC側の環境構築
 
 1. **WSLで行う場合**（非推奨）
