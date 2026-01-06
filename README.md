@@ -303,6 +303,7 @@ ros2 launch livox_ros_driver2 msg_HAP_launch.py
 ### Ubuntu PCとWindows PCの連携
 
 - 有線LANをUbuntu PCとWindows PC間につなげる
+- Ubuntu PCで```nmcli connection show```コマンドを実行して、有線接続ケーブルのインターフェース名（Wired connection 1など）をメモ
 - Ubuntu PCで以下のコマンドを実行する
 
 ```sh
