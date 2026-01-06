@@ -50,6 +50,16 @@ ros2 run pc_send pc_send
 ros2 bag record -o <フォルダ名> -s sqlite3 /converted_pointcloud2
 ```
 
+- <フォルダ名>の場所にdb3形式のデータができる。これをdb3_to_bin.pyでバイナリ形式に変換する
+
+```bash
+python3 db3_to_bin.py <フォルダ名>_0.db3 <フォルダ名>_0.bin
+```
+
+- できたbinファイルをWindowsPCにコピーして、プロジェクトのAssetsのStreamingAssetsフォルダの中に配置
+- Unityのヒエラルキービューで[System]を選択し、SimgleFilePointCloudPlayerにチェックを入れ他は外す
+- SimgleFilePointCloudPlayerでbinファイルを指定して、スタートボタンで実行する
+
 ## やったこと
 
 - システム上、PCとTurtlebot4の両方の環境構築が必要
