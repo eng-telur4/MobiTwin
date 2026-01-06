@@ -1,4 +1,4 @@
-<img width="2420" height="1386" alt="image" src="https://github.com/user-attachments/assets/a8383d2f-e1aa-4715-824b-a5767227df9f" /># MobiTwin
+# MobiTwin
 This repository mainly contains source code for my undergraduate graduation research projects.
 
 ## ディレクトリ構成
@@ -15,6 +15,11 @@ This repository mainly contains source code for my undergraduate graduation rese
 - ラズパイにSSH接続し、以下のコマンドを実行する。Wi-Fi経由でデータが送信し始めるようになる
 
 ```bash
+# LiDARからデータが受信できてるか確認（ログが大量に出たら成功）
+```
+
+```bash
+# データをWi-Fiネットワーク上にPublishする
 ros2 launch livox_ros_driver2 msg_MID360_launch.py
 ```
 
@@ -23,10 +28,14 @@ ros2 launch livox_ros_driver2 msg_MID360_launch.py
 ```bash
 # ターミナル（1つ目）：livox_to_pointcloudの起動
 ros2 run livox_to_pointcloud2 livox_to_pointcloud2_node  --ros-args -r /livox_pointcloud:=/livox/lidar
+```
 
-# ターミナル（2つ目）：rvizの起動（rvizファイル：Fixed Frameをlivox_frame、topic受信をPointCloud2にしたもの）
+```bash
+# ターミナル（2つ目）：rvizの起動・点群の可視化（rvizファイル：Fixed Frameをlivox_frame、topic受信をPointCloud2にしたもの）
 rviz2 -d livox_ws/l2pc.rviz
+```
 
+```bash
 # ターミナル（3つ目）：WindowsPCへのデータ送信
 ros2 run pc_send pc_send
 ```
