@@ -16,6 +16,7 @@ This repository mainly contains source code for my undergraduate graduation rese
 
 ```bash
 # LiDARからデータが受信できてるか確認（ログが大量に出たら成功）
+Livox-SDK2/build/samples/livox_lidar_quick_start/livox_lidar_quick_start Livox-SDK2/samples/livox_lidar_quick_start/mid360_config.json 
 ```
 
 ```bash
