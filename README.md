@@ -12,6 +12,9 @@ This repository mainly contains source code for my undergraduate graduation rese
  
 ### 実行手順
 
+> [!IMPORTANT]
+> 同じWi-Fiに接続していることを確認する
+
 - ラズパイにSSH接続し、以下のコマンドを実行する。Wi-Fi経由でデータが送信し始めるようになる
 
 ```bash
@@ -47,6 +50,15 @@ ros2 run pc_send pc_send
 # TOPIC通信の確認方法
 ros2 topic list
 ```
+
+## リモコン接続方法
+1. Turtlebot4のラズパイにSSH接続する (`ssh ubuntu@<Turtlebot4のIPアドレス>`)
+2. `bluetoothctl`でblutooth設定のモードに切り替える
+3. `scan on`を実行した後、コントローラーのボタンを押して、`A0`から始まるMACアドレスが表示される
+4. `trust [MAC_ADDRESS]`、`pair [MAC_ADDRESS]`、`connect [MAC_ADDRESS]`の順でコマンドを実行し、接続完了
+> [!NOTE]
+> 接続を切る、または接続に失敗した場合は、`untrust MAC_ADDRESS]`と`remove [MAC_ADDRESS]`を使う
+
 ## データ記録方法
 
 - ラズパイからのデータ受信時・/converted_pointcloud2への変換時にUbuntuPCで以下のコマンドを実行
