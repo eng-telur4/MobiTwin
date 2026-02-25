@@ -41,8 +41,12 @@ rviz2 -d livox_ws/l2pc.rviz
 ros2 run pc_send pc_send
 ```
 
-- WindowsPCでUnityを起動し、SceneをSampleSceneにしたあと、画面上部のスタートボタンを押すと点群が表示される
+- WindowsPCでUnityを起動し、SceneをSampleSceneにしたあと、画面上部のスタートボタンを押すと点群が表示される (`UDP Pointcloud Receiver`)
 
+```bash
+# TOPIC通信の確認方法
+ros2 topic list
+```
 ## データ記録方法
 
 - ラズパイからのデータ受信時・/converted_pointcloud2への変換時にUbuntuPCで以下のコマンドを実行
